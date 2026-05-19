@@ -668,7 +668,8 @@ document.getElementById('q').addEventListener('input', e => {
 });
 
 /* ══ TOGGLE TEMA ══ */
-let dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const hora = new Date().getHours();
+let dark = hora < 6 || hora >= 18;
 document.getElementById('toggle').addEventListener('click', () => {
   dark = !dark;
   const t = dark ? 'dark' : 'light';
